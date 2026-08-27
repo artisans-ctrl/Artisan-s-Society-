@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan's Society | CHMSU</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            color: #222;
+        }
+
+        header {
+            background: #111111;
+            padding: 15px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #ff7300;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            color: white;
+
+            background:
+                linear-gradient(135deg, #d90000, #1717c9);
+        }
+
+        .hero small {
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin: 20px 0;
+            font-weight: 900;
+        }
+
+        .hero h1 span {
+            color: #ff7300;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 25px;
+            background: white;
+            color: #d90000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        section {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        section h2 {
+            color: #d90000;
+            font-size: 34px;
+            margin-bottom: 25px;
+        }
+
+        section p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        .adviser {
+            margin: 35px auto;
+            padding: 25px;
+            max-width: 400px;
+            background: #f2f2f2;
+            border-left: 6px solid #ff7300;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+
+        .card {
+            width: 280px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px #cccccc;
+        }
+
+        .card h3 {
+            color: #1717c9;
+            margin-bottom: 15px;
+        }
+
+        #officers {
+            background: #f5f5f5;
+        }
+
+        .coming {
+            padding: 40px;
+            background: white;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        footer {
+            background: #111111;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="brand">🎨 ARTISAN'S SOCIETY</div>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#activities">Activities</a>
+            <a href="#officers">Officers</a>
+        </div>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div>
+        <small>CARLOS HILADO MEMORIAL STATE UNIVERSITY</small>
+
+        <h1>
+            ARTISAN'S<br>
+            <span>SOCIETY</span>
+        </h1>
+
+        <p>
+            Creativity • Artistry • Expression
+        </p>
+
+        <a href="#about" class="button">
+            DISCOVER OUR SOCIETY
+        </a>
+    </div>
+</section>
+
+<section id="about">
+    <h2>ABOUT US</h2>
+
+    <p>
+        Artisan's Society is a creative community of students
+        who share a passion for art, design, creativity,
+        and artistic expression.
+    </p>
+
+    <div class="adviser">
+        <h3>OUR ADVISER</h3>
+        <br>
+        <p>FEDERICO V. DENISA JR.</p>
+    </div>
+</section>
+
+<section id="activities">
+    <h2>OUR ACTIVITIES</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🎨 ART WORKSHOPS</h3>
+            <p>
+                Developing artistic skills through
+                creative activities.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🖌️ ART EXHIBITIONS</h3>
+            <p>
+                Showcasing the creativity and talents
+                of our members.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>✨ CREATIVE EVENTS</h3>
+            <p>
+                Building friendship through artistic
+                experiences.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="officers">
+    <h2>OUR OFFICERS</h2>
+
+    <div class="coming">
+        <p>
+            Officer information will be added soon.
+        </p>
+    </div>
+</section>
+
+<footer>
+    <p>
+        © 2026 Artisan's Society — CHMSU
+    </p>
+</footer>
+
+</body>
+                                  </html>
