@@ -1,198 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artisan's Society | CHMSU</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<title>Artisan's Society | CHMSU</title>
 
-        html {
-            scroll-behavior: smooth;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #ffffff;
-            color: #222;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #222;
+}
 
-        header {
-            background: #111111;
-            padding: 15px 7%;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+/* NAVIGATION */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0,0,0,0.92);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
 
-        .brand {
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-        }
+.logo span {
+    color: #ff7a00;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 15px;
-            font-size: 14px;
-        }
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
 
-        nav a:hover {
-            color: #ff7300;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
 
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 30px;
-            color: white;
+nav a:hover {
+    color: #ff7a00;
+}
 
-            background:
-                linear-gradient(135deg, #d90000, #1717c9);
-        }
+/* HERO */
+.hero {
+    min-height: 100vh;
+    padding: 130px 25px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
 
-        .hero small {
-            letter-spacing: 2px;
-        }
+    background:
+        radial-gradient(circle at 20% 20%, #ff3030, transparent 35%),
+        radial-gradient(circle at 80% 80%, #172cff, transparent 40%),
+        linear-gradient(135deg, #d40000, #76005f, #1414a8);
+}
 
-        .hero h1 {
-            font-size: 55px;
-            margin: 20px 0;
-            font-weight: 900;
-        }
+.hero-content {
+    max-width: 700px;
+}
 
-        .hero h1 span {
-            color: #ff7300;
-        }
+.badge {
+    letter-spacing: 4px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
 
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
+.hero h1 {
+    font-size: clamp(48px, 12vw, 90px);
+    line-height: 0.95;
+    margin-bottom: 20px;
+}
 
-        .button {
-            display: inline-block;
-            padding: 14px 25px;
-            background: white;
-            color: #d90000;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-        }
+.hero h1 span {
+    color: #ff7a00;
+}
 
-        section {
-            padding: 80px 10%;
-            text-align: center;
-        }
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
 
-        section h2 {
-            color: #d90000;
-            font-size: 34px;
-            margin-bottom: 25px;
-        }
+.btn {
+    display: inline-block;
+    padding: 15px 28px;
+    background: white;
+    color: #c40000;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-        section p {
-            max-width: 700px;
-            margin: auto;
-            line-height: 1.7;
-        }
+.btn:hover {
+    transform: translateY(-4px);
+}
 
-        .adviser {
-            margin: 35px auto;
-            padding: 25px;
-            max-width: 400px;
-            background: #f2f2f2;
-            border-left: 6px solid #ff7300;
-        }
+/* SECTIONS */
+section {
+    padding: 80px 25px;
+}
 
-        .cards {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin-top: 35px;
-        }
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
 
-        .card {
-            width: 280px;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px #cccccc;
-        }
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
 
-        .card h3 {
-            color: #1717c9;
-            margin-bottom: 15px;
-        }
+.section-title h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
 
-        #officers {
-            background: #f5f5f5;
-        }
+.section-title span {
+    color: #e44b00;
+}
 
-        .coming {
-            padding: 40px;
-            background: white;
-            max-width: 600px;
-            margin: auto;
-        }
+/* ABOUT */
+.about {
+    background: #f7f7f7;
+}
 
-        footer {
-            background: #111111;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
+.about-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    line-height: 1.8;
+}
 
-        @media (max-width: 700px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
+/* ACTIVITIES */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
 
-            nav a {
-                margin: 5px;
-            }
+.card {
+    padding: 30px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: 0.3s;
+    border-top: 5px solid #e00000;
+}
 
-            .hero h1 {
-                font-size: 42px;
-            }
-        }
-    </style>
+.card:nth-child(2) {
+    border-color: #174cff;
+}
+
+.card:nth-child(3) {
+    border-color: #ff7a00;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card .icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+/* OFFICERS */
+.officers {
+    background: #111;
+    color: white;
+}
+
+.officer-card {
+    background: #1e1e1e;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.officer-photo {
+    width: 90px;
+    height: 90px;
+    margin: auto auto 15px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#e00000,#ff7a00,#174cff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+}
+
+.officer-card h3 {
+    margin-bottom: 5px;
+}
+
+.position {
+    color: #ff7a00;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+    background: linear-gradient(135deg,#e00000,#174cff);
+    color: white;
+}
+
+.contact p {
+    margin: 12px 0;
+}
+
+/* FOOTER */
+footer {
+    background: #050505;
+    color: #aaa;
+    text-align: center;
+    padding: 30px 15px;
+    font-size: 14px;
+}
+
+footer strong {
+    color: #ff7a00;
+}
+
+/* MOBILE */
+@media(max-width:600px) {
+
+    nav {
+        padding: 14px 15px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    section {
+        padding: 65px 20px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <div class="brand">🎨 ARTISAN'S SOCIETY</div>
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">
+        🎨 <span>ARTISAN'S</span> SOCIETY
+    </div>
 
-        <div>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#activities">Activities</a>
-            <a href="#officers">Officers</a>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#officers">Officers</a></li>
+    </ul>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+
+        <div class="badge">
+            CARLOS HILADO MEMORIAL STATE UNIVERSITY
         </div>
-    </nav>
-</header>
-
-<section id="home" class="hero">
-    <div>
-        <small>CARLOS HILADO MEMORIAL STATE UNIVERSITY</small>
 
         <h1>
             ARTISAN'S<br>
@@ -203,75 +315,170 @@
             Creativity • Artistry • Expression
         </p>
 
-        <a href="#about" class="button">
+        <a href="#about" class="btn">
             DISCOVER OUR SOCIETY
         </a>
+
     </div>
 </section>
 
-<section id="about">
-    <h2>ABOUT US</h2>
 
-    <p>
-        Artisan's Society is a creative community of students
-        who share a passion for art, design, creativity,
-        and artistic expression.
-    </p>
+<!-- ABOUT -->
+<section class="about" id="about">
 
-    <div class="adviser">
-        <h3>OUR ADVISER</h3>
-        <br>
-        <p>FEDERICO V. DENISA JR.</p>
+    <div class="container">
+
+        <div class="section-title">
+            <h2>About <span>Us</span></h2>
+            <p>Where creativity becomes expression.</p>
+        </div>
+
+        <div class="about-box">
+
+            <p>
+                <strong>Artisan's Society</strong> is a creative organization
+                of Carlos Hilado Memorial State University dedicated to
+                promoting artistic expression, creativity, and appreciation
+                of the arts.
+            </p>
+
+            <br>
+
+            <p>
+                We provide students with opportunities to explore their
+                talents, collaborate with fellow artists, participate in
+                creative activities, and showcase their artistic abilities.
+            </p>
+
+        </div>
+
     </div>
+
 </section>
 
+
+<!-- ACTIVITIES -->
 <section id="activities">
-    <h2>OUR ACTIVITIES</h2>
 
-    <div class="cards">
+    <div class="container">
 
-        <div class="card">
-            <h3>🎨 ART WORKSHOPS</h3>
-            <p>
-                Developing artistic skills through
-                creative activities.
-            </p>
+        <div class="section-title">
+            <h2>Our <span>Activities</span></h2>
+            <p>Creating, collaborating, and inspiring.</p>
         </div>
 
-        <div class="card">
-            <h3>🖌️ ART EXHIBITIONS</h3>
-            <p>
-                Showcasing the creativity and talents
-                of our members.
-            </p>
-        </div>
+        <div class="cards">
 
-        <div class="card">
-            <h3>✨ CREATIVE EVENTS</h3>
-            <p>
-                Building friendship through artistic
-                experiences.
-            </p>
+            <div class="card">
+                <div class="icon">🎨</div>
+                <h3>Art Workshops</h3>
+                <p>
+                    Creative workshops where members can develop
+                    and improve their artistic skills.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🖌️</div>
+                <h3>Art Exhibitions</h3>
+                <p>
+                    Showcasing artworks and talents of our
+                    creative members.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">✨</div>
+                <h3>Creative Events</h3>
+                <p>
+                    Activities that encourage imagination,
+                    collaboration, and self-expression.
+                </p>
+            </div>
+
         </div>
 
     </div>
+
 </section>
 
-<section id="officers">
-    <h2>OUR OFFICERS</h2>
 
-    <div class="coming">
-        <p>
-            Officer information will be added soon.
-        </p>
+<!-- OFFICERS -->
+<section class="officers" id="officers">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Our <span>Officers</span></h2>
+            <p>Meet the people behind the society.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="officer-card">
+                <div class="officer-photo">👤</div>
+                <h3>FEDERICO V. DENISA JR.</h3>
+                <p class="position">President</p>
+            </div>
+
+            <div class="officer-card">
+                <div class="officer-photo">👤</div>
+                <h3>Officer Name</h3>
+                <p class="position">Vice President</p>
+            </div>
+
+            <div class="officer-card">
+                <div class="officer-photo">👤</div>
+                <h3>Officer Name</h3>
+                <p class="position">Secretary</p>
+            </div>
+
+        </div>
+
     </div>
+
 </section>
 
+
+<!-- CONTACT -->
+<section class="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Be Part of <span>Artisan's</span></h2>
+        </div>
+
+        <p>Creativity has no limits.</p>
+        <p>Art • Design • Expression • Community</p>
+
+        <br>
+
+        <a href="mailto:artisanssociety@chmsu.edu.ph" class="btn">
+            CONTACT US
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
 <footer>
+
     <p>
-        © 2026 Artisan's Society — CHMSU
+        © 2026 <strong>Artisan's Society</strong>
     </p>
+
+    <p>
+        Carlos Hilado Memorial State University
+    </p>
+
+    <p>
+        Creativity • Artistry • Expression
+    </p>
+
 </footer>
 
 </body>
-                                  </html>
+    </html>
