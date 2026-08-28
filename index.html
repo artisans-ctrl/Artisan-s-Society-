@@ -7,6 +7,7 @@
 <title>Artisan's Society | CHMSU - Alijis Campus</title>
 
 <style>
+
 * {
     margin: 0;
     padding: 0;
@@ -15,19 +16,25 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f7;
     color: #222;
+    line-height: 1.6;
 }
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
+
 nav {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(0,0,0,0.92);
-    padding: 15px 25px;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(10px);
+    padding: 16px 6%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,6 +44,7 @@ nav {
     color: white;
     font-size: 20px;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .logo span {
@@ -46,49 +54,86 @@ nav {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 25px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
 nav a:hover {
     color: #ff7a00;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
+
 .hero {
     min-height: 100vh;
-    padding: 130px 25px 60px;
+    padding: 130px 25px 80px;
+
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+
     text-align: center;
     color: white;
 
     background:
-        radial-gradient(circle at 20% 20%, #ff3030, transparent 35%),
-        radial-gradient(circle at 80% 80%, #172cff, transparent 40%),
-        linear-gradient(135deg, #d40000, #76005f, #1414a8);
+        radial-gradient(circle at 15% 20%, #ff3030, transparent 32%),
+        radial-gradient(circle at 85% 80%, #172cff, transparent 38%),
+        linear-gradient(135deg, #c90000, #72005d, #111bb5);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border: 2px solid rgba(255,255,255,0.12);
+    border-radius: 50%;
+    bottom: -100px;
+    left: -80px;
 }
 
 .hero-content {
-    max-width: 700px;
+    max-width: 850px;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 1s ease;
 }
 
 .badge {
-    letter-spacing: 4px;
-    font-size: 13px;
-    margin-bottom: 20px;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    opacity: 0.9;
 }
 
 .hero h1 {
-    font-size: clamp(48px, 12vw, 90px);
+    font-size: clamp(50px, 12vw, 100px);
     line-height: 0.95;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-weight: 800;
 }
 
 .hero h1 span {
@@ -96,13 +141,13 @@ nav a:hover {
 }
 
 .hero p {
-    font-size: 20px;
-    margin-bottom: 30px;
+    font-size: 21px;
+    margin-bottom: 35px;
 }
 
 .btn {
     display: inline-block;
-    padding: 15px 28px;
+    padding: 15px 30px;
     background: white;
     color: #c40000;
     text-decoration: none;
@@ -112,26 +157,30 @@ nav a:hover {
 }
 
 .btn:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
-/* SECTIONS */
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
 section {
-    padding: 80px 25px;
+    padding: 90px 25px;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 45px;
+    margin-bottom: 50px;
 }
 
 .section-title h2 {
-    font-size: 38px;
+    font-size: 42px;
     margin-bottom: 10px;
 }
 
@@ -139,29 +188,39 @@ section {
     color: #e44b00;
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
+
 .about {
-    background: #f7f7f7;
+    background: #f5f5f5;
 }
 
 .about-box {
     background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    line-height: 1.8;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+    line-height: 1.9;
 }
 
-/* ACTIVITIES */
+.about-box strong {
+    color: #d40000;
+}
+
+/* =========================
+   ACTIVITIES
+========================= */
+
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
 }
 
 .card {
-    padding: 30px;
-    border-radius: 15px;
+    padding: 35px 25px;
+    border-radius: 18px;
     background: white;
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     text-align: center;
@@ -178,84 +237,191 @@ section {
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
 }
 
 .card .icon {
-    font-size: 45px;
-    margin-bottom: 15px;
+    font-size: 50px;
+    margin-bottom: 18px;
 }
 
 .card h3 {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    font-size: 21px;
 }
 
-/* OFFICERS */
+/* =========================
+   OFFICERS
+========================= */
+
 .officers {
-    background: #111;
+    background: #101010;
     color: white;
 }
 
-.officer-card {
-    background: #1e1e1e;
-    padding: 25px;
-    border-radius: 15px;
+.officers .section-title p {
+    color: #bbb;
+}
+
+.officer-category {
+    margin-bottom: 60px;
+}
+
+.category-title {
     text-align: center;
+    margin-bottom: 25px;
+}
+
+.category-title h3 {
+    font-size: 25px;
+    color: #ff7a00;
+}
+
+.officer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+}
+
+.officer-card {
+    background: #1c1c1c;
+    padding: 28px 20px;
+    border-radius: 16px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid #292929;
+}
+
+.officer-card:hover {
+    transform: translateY(-7px);
+    border-color: #ff7a00;
 }
 
 .officer-photo {
-    width: 90px;
-    height: 90px;
-    margin: auto auto 15px;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 18px;
+
     border-radius: 50%;
-    background: linear-gradient(135deg,#e00000,#ff7a00,#174cff);
+
+    background:
+        linear-gradient(135deg,#e00000,#ff7a00,#174cff);
+
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 35px;
+
+    font-size: 40px;
+
+    border: 4px solid #333;
 }
 
-.officer-card h3 {
-    margin-bottom: 5px;
+.officer-card h4 {
+    font-size: 17px;
+    margin-bottom: 7px;
 }
 
 .position {
     color: #ff7a00;
+    font-size: 14px;
 }
 
-/* CONTACT */
+/* FEATURED PRESIDENT */
+
+.president-card {
+    max-width: 300px;
+    margin: auto;
+    background: linear-gradient(145deg,#222,#151515);
+    border: 2px solid #ff7a00;
+}
+
+.president-card .officer-photo {
+    width: 120px;
+    height: 120px;
+    font-size: 45px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
 .contact {
     text-align: center;
-    background: linear-gradient(135deg,#e00000,#174cff);
+    color: white;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ff3030, transparent 35%),
+        radial-gradient(circle at 80% 80%, #172cff, transparent 40%),
+        linear-gradient(135deg,#d00000,#68005f,#111bb5);
+}
+
+.contact .section-title {
+    margin-bottom: 25px;
+}
+
+.contact .section-title h2 {
     color: white;
 }
 
-.contact p {
-    margin: 12px 0;
+.contact .section-title span {
+    color: #ff7a00;
 }
 
-/* FOOTER */
+.contact p {
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
     background: #050505;
     color: #aaa;
     text-align: center;
-    padding: 30px 15px;
+    padding: 35px 15px;
     font-size: 14px;
+}
+
+footer p {
+    margin: 6px 0;
 }
 
 footer strong {
     color: #ff7a00;
 }
 
-/* MOBILE */
-@media(max-width:600px) {
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px) {
 
     nav {
         padding: 14px 15px;
     }
 
     .logo {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     nav ul {
@@ -263,28 +429,98 @@ footer strong {
     }
 
     nav a {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .hero {
         padding-top: 120px;
     }
 
+    .badge {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
     section {
-        padding: 65px 20px;
+        padding: 70px 20px;
     }
 
     .section-title h2 {
+        font-size: 32px;
+    }
+
+    .about-box {
+        padding: 25px;
+    }
+
+    .officer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .officer-card {
+        padding: 20px 12px;
+    }
+
+    .officer-photo {
+        width: 80px;
+        height: 80px;
         font-size: 30px;
     }
+
+    .officer-card h4 {
+        font-size: 14px;
+    }
+
+    .position {
+        font-size: 12px;
+    }
+
 }
+
+@media(max-width:420px) {
+
+    nav ul {
+        gap: 7px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .logo {
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .officer-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav>
+
     <div class="logo">
         🎨 <span>ARTISAN'S</span> SOCIETY
     </div>
@@ -295,19 +531,27 @@ footer strong {
         <li><a href="#activities">Activities</a></li>
         <li><a href="#officers">Officers</a></li>
     </ul>
+
 </nav>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero" id="home">
+
     <div class="hero-content">
 
         <div class="badge">
-            CARLOS HILADO MEMORIAL STATE UNIVERSITY (ALIJIS CAMPUS)
+            CARLOS HILADO MEMORIAL STATE UNIVERSITY
+            <br>
+            ALIJIS CAMPUS
         </div>
 
         <h1>
-            ARTISAN'S<br>
+            ARTISAN'S
+            <br>
             <span>SOCIETY</span>
         </h1>
 
@@ -320,34 +564,55 @@ footer strong {
         </a>
 
     </div>
+
 </section>
 
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT
+========================= -->
+
 <section class="about" id="about">
 
     <div class="container">
 
         <div class="section-title">
-            <h2>About <span>Us</span></h2>
-            <p>Where creativity becomes expression.</p>
+
+            <h2>
+                About <span>Us</span>
+            </h2>
+
+            <p>
+                Where creativity becomes expression.
+            </p>
+
         </div>
 
         <div class="about-box">
 
             <p>
                 <strong>Artisan's Society</strong> is a creative organization
-                of Carlos Hilado Memorial State University (Alijis Campus) dedicated to
-                promoting artistic expression, creativity, and appreciation
-                of the arts.
+                of Carlos Hilado Memorial State University – Alijis Campus
+                dedicated to promoting artistic expression, creativity,
+                collaboration, and appreciation of the arts.
             </p>
 
             <br>
 
             <p>
-                We provide students with opportunities to explore their
-                talents, collaborate with fellow artists, participate in
-                creative activities, and showcase their artistic abilities.
+                The organization provides students with opportunities to
+                discover and develop their artistic talents, collaborate
+                with fellow creatives, participate in artistic activities,
+                and showcase their works within the university community.
+            </p>
+
+            <br>
+
+            <p>
+                Through art and creativity, Artisan's Society aims to build
+                a community where students can express themselves,
+                inspire others, and celebrate the value of artistic
+                expression.
             </p>
 
         </div>
@@ -357,43 +622,73 @@ footer strong {
 </section>
 
 
-<!-- ACTIVITIES -->
+<!-- =========================
+     ACTIVITIES
+========================= -->
+
 <section id="activities">
 
     <div class="container">
 
         <div class="section-title">
-            <h2>Our <span>Activities</span></h2>
-            <p>Creating, collaborating, and inspiring.</p>
+
+            <h2>
+                Our <span>Activities</span>
+            </h2>
+
+            <p>
+                Creating, collaborating, and inspiring.
+            </p>
+
         </div>
 
         <div class="cards">
 
             <div class="card">
+
                 <div class="icon">🎨</div>
-                <h3>Art Workshops</h3>
+
+                <h3>
+                    Art Workshops
+                </h3>
+
                 <p>
                     Creative workshops where members can develop
                     and improve their artistic skills.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <div class="icon">🖌️</div>
-                <h3>Art Exhibitions</h3>
+
+                <h3>
+                    Art Exhibitions
+                </h3>
+
                 <p>
                     Showcasing artworks and talents of our
                     creative members.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <div class="icon">✨</div>
-                <h3>Creative Events</h3>
+
+                <h3>
+                    Creative Events
+                </h3>
+
                 <p>
                     Activities that encourage imagination,
                     collaboration, and self-expression.
                 </p>
+
             </div>
 
         </div>
@@ -403,186 +698,408 @@ footer strong {
 </section>
 
 
-<!-- OFFICERS -->
+<!-- =========================
+     OFFICERS
+========================= -->
+
 <section class="officers" id="officers">
 
     <div class="container">
 
         <div class="section-title">
-            <h2>Our <span>Officers</span></h2>
-            <p>Meet the people behind the society.</p>
-        </div>
 
-        <div class="cards">
+            <h2>
+                Our <span>Officers</span>
+            </h2>
 
-            <div class="officer-card">
-                <div class="officer-photo">👤</div>
-                <h3>FEDERICO V. DENISA JR.</h3>
-                <p class="position">Club Adviser</p>
-            </div>
-
-            <div class="officer-card">
-                <div class="officer-photo">👤</div>
-                <h3>HANS GABRIEL SEDAVA</h3>
-                <p class="position">President</p>
-            </div>
-
-            <div class="officer-card">
-                <div class="officer-photo">👤</div>
-                <h3>CLEOFEL ALCANTARA</h3>
-                <p class="position">Vice President</p>
-            </div>
-
-                <div class="officer-card">
-                <div class="officer-photo">👤</div>
-                <h3>JHAM MILLENA</h3>
-                <p class="position">Secretary</p>
-            </div>
-  
-                <div class="officer-card">
-                <div class="officer-photo">👤</div>
-                <h3>JENIERY AGBANLOG</h3>
-                <p class="position">Treasurer</p>
-            </div>
-
-                <div class="officer-card">
-                <div class="officer-photo">👤</div>
-                <h3>MA. RONAMEL GALLO</h3>
-                <p class="position">Auditor</p>
-            </div>
-
-                <div class="officer-card">
-                <div class="officer-photo">👤</div>
-                <h3>REY JOSHUA TENERIFE</h3>
-                <p class="position">3rd Year Business Manager</p>
-            </div>
-
-                <div class="officer-card">
-                <div class="officer-photo">👤</div>
-                <h3>JANELL MACAYAN</h3>
-                <p class="position">2nd Year Business Manager</p>
-            </div>
-
-                <div class="officer-card">
-                <div class="officer-photo">👤</div>
-                <h3>PRAYANS JEWEL JUMAO-AS</h3>
-                <p class="position">3rd Year P.I.O.</p>
-            </div>
-
-               <div class="officer-card">
-               <div class="officer-photo">👤</div>
-               <h3>ANGELA BALOYO</h3>
-               <p class="position">2nd Year P.I.O.</p>
-            </div>
-
-    <div class="officer-card">
-               <div class="officer-photo">👤</div>
-               <h3>GICHO YOSORES</h3>
-               <p class="position">3rd Year Sergeant-at-Arms</p>
-            </div> 
-       
-        <div class="officer-card">
-               <div class="officer-photo">👤</div>
-               <h3>MARK ANDREW MAKILAN</h3>
-               <p class="position">2nd Year Sergeant-at-Arms</p>
-            </div>
-
-         <div class="officer-card">
-               <div class="officer-photo">👤</div>
-               <h3>CATHERINE SILONGA</h3>
-               <p class="position">3rd Year Artist</p>
-            </div>
-
-     <div class="officer-card">
-               <div class="officer-photo">👤</div>
-               <h3>JAIME JAYPE</h3>
-               <p class="position">3rd Year Artist</p>
-            </div>
-    
-     <div class="officer-card">
-               <div class="officer-photo">👤</div>
-               <h3>AJAY C. BALALILHE</h3>
-               <p class="position">2nd Year Artist</p>
-            </div>
-
-    <div class="officer-card">
-               <div class="officer-photo">👤</div>
-               <h3>KRISTINE JOY DE PAZ</h3>
-               <p class="position">2nd Year Artist</p>
-            </div>
-       
-         <div class="officer-card">      
-               <div class="officer-photo">👤</div>
-               <h3>ALYZIA JOY CAJURAO</h3>
-               <p class="position">1st Year Artist</p>
-            </div>
-
-     <div class="officer-card">      
-               <div class="officer-photo">👤</div>
-               <h3>LANCE FERNANDEZ</h3>
-               <p class="position">1st Year Artist</p>
-            </div>
-          
-  <div class="officer-card">
-               <div class="officer-photo">👤</div>
-               <h3>EDUARD ANTHONY FAUSTO</h3>
-               <p class="position">Photographer</p>
-            </div>
-
- <div class="officer-card">
-               <div class="officer-photo">👤</div>
-               <h3>JAZMINE MONDEJAR</h3>
-               <p class="position">Photographer</p>
-            </div>
-            
-       </div>
+            <p>
+                Meet the people behind Artisan's Society.
+            </p>
 
         </div>
 
-    </div>
 
-</section>
+        <!-- ADVISER -->
 
+        <div class="officer-category">
 
-<!-- CONTACT -->
-<section class="contact">
+            <div class="category-title">
+                <h3>Club Adviser</h3>
+            </div>
 
-    <div class="container">
+            <div class="officer-grid">
 
-        <div class="section-title">
-            <h2>Be Part of <span>Artisan's</span></h2>
+                <div class="officer-card">
+
+                    <div class="officer-photo">
+                        👨‍🏫
+                    </div>
+
+                    <h4>
+                        FEDERICO V. DENISA JR.
+                    </h4>
+
+                    <p class="position">
+                        Club Adviser
+                    </p>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <p>Creativity has no limits.</p>
-        <p>Art • Design • Expression • Community</p>
 
-        <br>
+        <!-- EXECUTIVE OFFICERS -->
 
-        <a href="mailto:artisanssociety@chmsu.edu.ph" class="btn">
-            CONTACT US
-        </a>
+        <div class="officer-category">
 
-    </div>
+            <div class="category-title">
+                <h3>Executive Officers</h3>
+            </div>
 
-</section>
+            <div class="officer-grid">
 
 
-<!-- FOOTER -->
-<footer>
+                <div class="officer-card president-card">
 
-    <p>
-        © 2026 <strong>Artisan's Society</strong>
-    </p>
+                    <div class="officer-photo">
+                        👤
+                    </div>
 
-    <p>
-        Carlos Hilado Memorial State University
-    </p>
+                    <h4>
+                        HANS GABRIEL SEDAVA
+                    </h4>
 
-    <p>
-        Creativity • Artistry • Expression
-    </p>
+                    <p class="position">
+                        President
+                    </p>
 
-</footer>
+                </div>
 
-</body>
-    </html>
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">
+                        👤
+                    </div>
+
+                    <h4>
+                        CLEOFEL ALCANTARA
+                    </h4>
+
+                    <p class="position">
+                        Vice President
+                    </p>
+
+                </div>
+
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">
+                        👤
+                    </div>
+
+                    <h4>
+                        JHAM MILLENA
+                    </h4>
+
+                    <p class="position">
+                        Secretary
+                    </p>
+
+                </div>
+
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">
+                        👤
+                    </div>
+
+                    <h4>
+                        JENIERY AGBANLOG
+                    </h4>
+
+                    <p class="position">
+                        Treasurer
+                    </p>
+
+                </div>
+
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">
+                        👤
+                    </div>
+
+                    <h4>
+                        MA. RONAMEL GALLO
+                    </h4>
+
+                    <p class="position">
+                        Auditor
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUSINESS MANAGERS -->
+
+        <div class="officer-category">
+
+            <div class="category-title">
+                <h3>Business Managers</h3>
+            </div>
+
+            <div class="officer-grid">
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">👤</div>
+
+                    <h4>
+                        REY JOSHUA TENERIFE
+                    </h4>
+
+                    <p class="position">
+                        3rd Year Business Manager
+                    </p>
+
+                </div>
+
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">👤</div>
+
+                    <h4>
+                        JANELL MACAYAN
+                    </h4>
+
+                    <p class="position">
+                        2nd Year Business Manager
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PIO -->
+
+        <div class="officer-category">
+
+            <div class="category-title">
+                <h3>Public Information Officers</h3>
+            </div>
+
+            <div class="officer-grid">
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">👤</div>
+
+                    <h4>
+                        PRAYANS JEWEL JUMAO-AS
+                    </h4>
+
+                    <p class="position">
+                        3rd Year P.I.O.
+                    </p>
+
+                </div>
+
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">👤</div>
+
+                    <h4>
+                        ANGELA BALOYO
+                    </h4>
+
+                    <p class="position">
+                        2nd Year P.I.O.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERGEANTS -->
+
+        <div class="officer-category">
+
+            <div class="category-title">
+                <h3>Sergeants-at-Arms</h3>
+            </div>
+
+            <div class="officer-grid">
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">👤</div>
+
+                    <h4>
+                        GICHO YOSORES
+                    </h4>
+
+                    <p class="position">
+                        3rd Year Sergeant-at-Arms
+                    </p>
+
+                </div>
+
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">👤</div>
+
+                    <h4>
+                        MARK ANDREW MAKILAN
+                    </h4>
+
+                    <p class="position">
+                        2nd Year Sergeant-at-Arms
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ARTISTS -->
+
+        <div class="officer-category">
+
+            <div class="category-title">
+                <h3>Artists</h3>
+            </div>
+
+            <div class="officer-grid">
+
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">🎨</div>
+
+                    <h4>
+                        CATHERINE SILONGA
+                    </h4>
+
+                    <p class="position">
+                        3rd Year Artist
+                    </p>
+
+                </div>
+
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">🎨</div>
+
+                    <h4>
+                        JAIME JAYPE
+                    </h4>
+
+                    <p class="position">
+                        3rd Year Artist
+                    </p>
+
+                </div>
+
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">🎨</div>
+
+                    <h4>
+                        AJAY C. BALALILHE
+                    </h4>
+
+                    <p class="position">
+                        2nd Year Artist
+                    </p>
+
+                </div>
+
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">🎨</div>
+
+                    <h4>
+                        KRISTINE JOY DE PAZ
+                    </h4>
+
+                    <p class="position">
+                        2nd Year Artist
+                    </p>
+
+                </div>
+
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">🎨</div>
+
+                    <h4>
+                        ALYZIA JOY CAJURAO
+                    </h4>
+
+                    <p class="position">
+                        1st Year Artist
+                    </p>
+
+                </div>
+
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">🎨</div>
+
+                    <h4>
+                        LANCE FERNANDEZ
+                    </h4>
+
+                    <p class="position">
+                        1st Year Artist
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTOGRAPHERS -->
+
+        <div class="officer-category">
+
+            <div class="category-title">
+                <h3>Photographers</h3>
+            </div>
+
+            <div class="officer-grid">
+
+                <div class="officer-card">
+
+                    <div class="officer-photo">📷</div>
+
+                    <h4>
+                        
