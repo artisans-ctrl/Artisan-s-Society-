@@ -420,8 +420,10 @@ footer strong {
         padding: 14px 15px;
     }
 
-    .logo {
-        font-size: 15px;
+    .logo img {
+    width: 34px;
+    height: 34px;
+        
     }
 
     nav ul {
@@ -486,7 +488,7 @@ footer strong {
 
 }
 
-@media(max-width:420px) {
+@media(max-width:700px) {
 
     nav ul {
         gap: 7px;
@@ -497,7 +499,22 @@ footer strong {
     }
 
     .logo {
-        font-size: 13px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 5px;
+
     }
 
     .hero h1 {
@@ -522,6 +539,8 @@ footer strong {
 <nav>
 
     <div class="logo">
+       <img 
+src="Messenger_creation_DCAF51C1-E051-4594-B1CB-D540CC810EA4.jpeg" alt="Artisan's Society Logo">
         🎨 <span>ARTISAN'S</span> SOCIETY
     </div>
 
